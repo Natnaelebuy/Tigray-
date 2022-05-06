@@ -143,9 +143,14 @@ public class EgyptianPyramidsAppExample {
         System.out.println("Thank you for using Nassef's Egyptian Pyramid App!");
         break;
       case '2':
-      printAllpyramid();
+      printspecificpharaoh();
       break;
-      
+      case '3':
+      printallpyramid();
+      break;
+      case '4':
+      printspecificpyramid();
+      break;  
       default:
         System.out.println("ERROR: Unknown commmand");
         success = false;
@@ -156,12 +161,43 @@ public class EgyptianPyramidsAppExample {
 
   
 
-  private void printAllpyramid() {
+  
+
+  private void printspecificpyramid() {
+    String id;
+    System.out.print(" enter the id ");
+    Scanner scan = new Scanner (System.in);
+    id = scan.nextLine();
+    Integer identity = Integer.parseInt(id);
+    for (int i=0; i < pharaohArray.length; i++){
+      if(pharaohArray[i].id ==identity){
+        printMenu();
+        pharaohArray[i].print();
+        break;
+      }
+    }
+  }
+
+  private void printallpyramid() {
     for (int i = 0; i < pyramidArray.length; i++) {
       printMenuLine();
       pyramidArray[i].print();
       printMenuLine();
-      
+    }
+  }
+
+  private void printspecificpharaoh() {
+    String id;
+    System.out.print(" enter the id ");
+    Scanner scan = new Scanner (System.in);
+    id = scan.nextLine();
+    Integer identity = Integer.parseInt(id);
+    for (int i=0; i < pyramidArray.length; i++){
+      if(pyramidArray[i].id ==identity){
+        printMenu();
+        pyramidArray[i].print();
+        break;
+      }
     }
   }
 
@@ -183,7 +219,12 @@ public class EgyptianPyramidsAppExample {
     System.out.printf("Command\t\tDescription\n");
     System.out.printf("-------\t\t---------------------------------------\n");
     printMenuCommand('1', "List all the pharoahs");
-    printMenuCommand('2', "List all the pyramids");
+    printMenuCommand('2',"displays information for a specific Egyption Pharaoh");
+    printMenuCommand('3', "List all the pyramids ");
+    printMenuCommand('4', "Displays information for specific pyramid");
+    printMenuCommand('5', "Reports a list of requested pyramids without any duplicates");
+
+    
     printMenuCommand('q', "Quit");
     printMenuLine();
   }

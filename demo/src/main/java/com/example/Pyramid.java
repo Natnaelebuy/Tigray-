@@ -19,5 +19,11 @@ public class Pyramid {
   }
 
 public void print() {
+  System.out.printf("Pyramid%s\n", name);
+  System.out.printf("\tid: %d\n", id);
+  for(String String : contributors){
+    System.out.printf("contributors %s\n", String);
+
+  }
 }
 }

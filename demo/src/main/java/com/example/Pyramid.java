@@ -1,4 +1,4 @@
-package com.egyptianExample;
+package com.example;
 
 // pyramid class, that corresponds to the information in the json file
 public class Pyramid {
@@ -17,4 +17,7 @@ public class Pyramid {
     name = pyramidName;
     contributors = pyramidContributors;
   }
+
+public void print() {
+}
 }

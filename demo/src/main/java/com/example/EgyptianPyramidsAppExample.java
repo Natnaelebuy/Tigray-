@@ -1,4 +1,4 @@
-package com.egyptianExample;
+package com.example;
 
 import java.util.*;
 import org.json.simple.*;
@@ -36,7 +36,7 @@ public class EgyptianPyramidsAppExample {
   public EgyptianPyramidsAppExample() {
     // read egyptian pharaohs
     String pharaohFile =
-      "/Users/jerom/Documents/GitHub/class-java/egyptian-pyramids/demo/src/main/java/com/egyptianExample/pharaoh.json";
+      "/Users/natnaelebuy/Documents/GitHub/Githubnatnael/Tigray-/demo/src/main/java/com/example/pharaoh.json";
     JSONArray pharaohJSONArray = JSONFile.readArray(pharaohFile);
 
     // create and intialize the pharaoh array
@@ -44,7 +44,7 @@ public class EgyptianPyramidsAppExample {
 
     // read pyramids
     String pyramidFile =
-      "/Users/jerom/Documents/GitHub/class-java/egyptian-pyramids/demo/src/main/java/com/egyptian/pyramid.json";
+      "/Users/natnaelebuy/Documents/GitHub/Githubnatnael/Tigray-/demo/src/main/java/com/example/pyramid.json";
     JSONArray pyramidJSONArray = JSONFile.readArray(pyramidFile);
 
     // create and initialize the pyramid array
@@ -142,12 +142,27 @@ public class EgyptianPyramidsAppExample {
       case 'q':
         System.out.println("Thank you for using Nassef's Egyptian Pyramid App!");
         break;
+      case '2':
+      printAllpyramid();
+      break;
+      
       default:
         System.out.println("ERROR: Unknown commmand");
         success = false;
     }
 
     return success;
+  }
+
+  
+
+  private void printAllpyramid() {
+    for (int i = 0; i < pyramidArray.length; i++) {
+      printMenuLine();
+      pyramidArray[i].print();
+      printMenuLine();
+      
+    }
   }
 
   private static void printMenuCommand(Character command, String desc) {
@@ -168,6 +183,7 @@ public class EgyptianPyramidsAppExample {
     System.out.printf("Command\t\tDescription\n");
     System.out.printf("-------\t\t---------------------------------------\n");
     printMenuCommand('1', "List all the pharoahs");
+    printMenuCommand('2', "List all the pyramids");
     printMenuCommand('q', "Quit");
     printMenuLine();
   }

@@ -142,13 +142,13 @@ public class EgyptianPyramidsAppExample {
       case 'q':
         System.out.println("Thank you for using Nassef's Egyptian Pyramid App!");
         break;
-      case '2':
+      case '4':
       printspecificpharaoh();
       break;
       case '3':
       printallpyramid();
       break;
-      case '4':
+      case '2':
       printspecificpyramid();
       break;  
       default:
@@ -219,12 +219,9 @@ public class EgyptianPyramidsAppExample {
     System.out.printf("Command\t\tDescription\n");
     System.out.printf("-------\t\t---------------------------------------\n");
     printMenuCommand('1', "List all the pharoahs");
-    printMenuCommand('2',"displays information for a specific Egyption Pharaoh");
+    printMenuCommand('2', "Displays information for specific pharoh");
     printMenuCommand('3', "List all the pyramids ");
-    printMenuCommand('4', "Displays information for specific pyramid");
-    printMenuCommand('5', "Reports a list of requested pyramids without any duplicates");
-
-    
+    printMenuCommand('4',"displays information for a specific pyramid");
     printMenuCommand('q', "Quit");
     printMenuLine();
   }
